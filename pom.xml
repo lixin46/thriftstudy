@@ -12,6 +12,32 @@
     </description>
     <url>http://thrift.apache.org</url>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.sankuai.octo</groupId>
+                <artifactId>genthrift-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <configuration>
+                    <!--<appkey>根据实际情况填写</appkey>&lt;!&ndash;appkey根据实际情况填写 &ndash;&gt;-->
+                    <language>java</language>
+                    <thriftVersion>0.8.0</thriftVersion>
+                    <idlDir>idl/</idlDir>
+                    <codeDir>src/main/java</codeDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
