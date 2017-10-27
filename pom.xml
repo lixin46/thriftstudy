@@ -30,7 +30,7 @@
                 <configuration>
                     <!--<appkey>根据实际情况填写</appkey>&lt;!&ndash;appkey根据实际情况填写 &ndash;&gt;-->
                     <language>java</language>
-                    <thriftVersion>0.8.0</thriftVersion>
+                    <thriftVersion>0.9.3</thriftVersion>
                     <idlDir>idl/</idlDir>
                     <codeDir>src/main/java</codeDir>
                 </configuration>
