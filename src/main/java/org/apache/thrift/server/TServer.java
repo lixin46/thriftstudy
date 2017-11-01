@@ -29,13 +29,22 @@ import org.apache.thrift.transport.TTransportFactory;
 
 /**
  * Thrift服务的通用接口定义,
+ * 对外提供启动和停止两种操作
+ * serve();
+ * stop();
+ *
+ * 同时可读写运行状态和时间处理器
  *
  * 自带参数类
+ *
+ * Server负责启动-->服务-->停止的逻辑
  */
 public abstract class TServer {
 
     /**
-     * AbstractServerArgs子类
+     * AbstractServerArgs的最基本实现.
+     * 不包含任何附加参数.
+     * 因为AbstractServerArgs本身是抽象类,无法实例化.
      */
     public static class Args extends AbstractServerArgs<Args> {
         public Args(TServerTransport transport) {

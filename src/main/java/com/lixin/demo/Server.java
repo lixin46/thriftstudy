@@ -41,6 +41,12 @@ public class Server {
         };
 
         new Thread(simple).start();
+        Runtime.getRuntime().addShutdownHook(new Thread(){
+            @Override
+            public void run() {
+
+            }
+        });
     }
 
 
