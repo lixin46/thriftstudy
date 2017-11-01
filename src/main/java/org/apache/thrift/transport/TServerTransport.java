@@ -60,9 +60,14 @@ public abstract class TServerTransport implements Closeable {
         }
     }
 
+    /**
+     * 监听???
+     * @throws TTransportException
+     */
     public abstract void listen() throws TTransportException;
 
     public final TTransport accept() throws TTransportException {
+        // accept实现???
         TTransport transport = acceptImpl();
         if (transport == null) {
             throw new TTransportException("accept() may not return NULL");

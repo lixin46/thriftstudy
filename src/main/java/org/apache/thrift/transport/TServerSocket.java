@@ -121,6 +121,7 @@ public class TServerSocket extends TServerTransport {
         // Make sure not to block on accept
         if (serverSocket_ != null) {
             try {
+                // ???
                 serverSocket_.setSoTimeout(0);
             } catch (SocketException sx) {
                 LOGGER.error("Could not set socket timeout.", sx);
