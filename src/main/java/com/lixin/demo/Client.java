@@ -6,6 +6,7 @@ import com.lixin.thrift.vo.UserVo;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
+import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
@@ -16,7 +17,7 @@ import org.apache.thrift.transport.TTransportException;
 public class Client {
 
     public static void main(String[] args) throws TTransportException {
-        // 1.创建传输层
+        // 1.创建传输对象
         try (TTransport transport = new TSocket("localhost", 9090)) {
             // 打开连接
             transport.open();

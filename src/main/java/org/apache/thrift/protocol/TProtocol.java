@@ -29,6 +29,16 @@ import java.nio.ByteBuffer;
 /**
  * Protocol interface definition.
  */
+
+/**
+ * 协议接口定义,
+ * 主要负责如何读取数据,以及如何写入数据.
+ * 具体读取或写入什么数据,由调用方判断决定.
+ *
+ * 数据主要包括:
+ * 消息(TMessage),结构(TStruct),映射(TMap),列表(TList),集合(TSet),字段(TField),
+ * 基本类型(boolean,byte,short,int,double,binary,string)
+ */
 public abstract class TProtocol {
 
     /**

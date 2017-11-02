@@ -19,13 +19,17 @@
 
 package org.apache.thrift.protocol;
 
+
 /**
- * Message type constants in the Thrift protocol.
- *
+ * 消息类型
  */
 public final class TMessageType {
-  public static final byte CALL  = 1;
-  public static final byte REPLY = 2;
-  public static final byte EXCEPTION = 3;
-  public static final byte ONEWAY = 4;
+    // 调用,客户端发送的消息
+    public static final byte CALL = 1;
+    // 重播,服务端发送的消息
+    public static final byte REPLY = 2;
+    // 异常,服务端发送的消息,当服务端方法调用产生非用户定义的异常时,会向客户端会发此类型消息
+    public static final byte EXCEPTION = 3;
+    // 单次调用,客户端发送的消息
+    public static final byte ONEWAY = 4;
 }

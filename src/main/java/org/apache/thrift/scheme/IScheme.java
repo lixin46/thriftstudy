@@ -22,8 +22,8 @@ import org.apache.thrift.TBase;
 
 public interface IScheme<T extends TBase> {
 
-  public void read(org.apache.thrift.protocol.TProtocol iproto, T struct) throws org.apache.thrift.TException;
+    void read(org.apache.thrift.protocol.TProtocol iproto, T struct) throws org.apache.thrift.TException;
 
-  public void write(org.apache.thrift.protocol.TProtocol oproto, T struct) throws org.apache.thrift.TException;
+    void write(org.apache.thrift.protocol.TProtocol oproto, T struct) throws org.apache.thrift.TException;
 
 }
