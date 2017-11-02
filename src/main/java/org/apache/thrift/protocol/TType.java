@@ -27,7 +27,7 @@ package org.apache.thrift.protocol;
  * 数据类型
  */
 public final class TType {
-    //
+    // 停止
     public static final byte STOP = 0;
     //
     public static final byte VOID = 1;

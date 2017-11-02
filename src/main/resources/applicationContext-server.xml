@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userThriftService" class="com.meituan.service.mobile.mtthrift.proxy.ThriftServerPublisher"
+          init-method="publish" destroy-method="destroy">
+        <!-- 服务类,编译idl文件生成 -->
+        <property name="serviceInterface" value="com.lixin.thrift.service.UserService"/>
+        <!--  服务实现bean -->
+        <property name="serviceImpl">
+            <bean class="com.lixin.thrift.service.impl.UserServiceImpl"/>
+        </property>
+        <!-- 本地appkey -->
+        <property name="appKey" value="com.sankuai.inf.mtthrift.testServer"/>
+        <!-- 监听端口 -->
+        <property name="port" value="9001"/>
+    </bean>
+
+
+</beans>

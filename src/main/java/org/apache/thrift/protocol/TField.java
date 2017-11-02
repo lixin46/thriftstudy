@@ -21,46 +21,49 @@ package org.apache.thrift.protocol;
 
 /**
  * Helper class that encapsulates field metadata.
- *
  */
 public class TField {
-  public TField() {
-    this("", TType.STOP, (short)0);
-  }
 
-  public TField(String n, byte t, short i) {
-    name = n;
-    type = t;
-    id = i;
-  }
+    public TField() {
+        this("", TType.STOP, (short) 0);
+    }
 
-  public final String name;
-  public final byte   type;
-  public final short  id;
+    public TField(String n, byte t, short i) {
+        name = n;
+        type = t;
+        id = i;
+    }
 
-  public String toString() {
-    return "<TField name:'" + name + "' type:" + type + " field-id:" + id + ">";
-  }
+    // 字段名称
+    public final String name;
+    // 字段类型
+    public final byte type;
+    // 字段id
+    public final short id;
 
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + id;
-    result = prime * result + ((name == null) ? 0 : name.hashCode());
-    result = prime * result + type;
-    return result;
-  }
+    public String toString() {
+        return "<TField name:'" + name + "' type:" + type + " field-id:" + id + ">";
+    }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    TField otherField = (TField) obj;
-    return type == otherField.type && id == otherField.id;
-  }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + type;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        TField otherField = (TField) obj;
+        return type == otherField.type && id == otherField.id;
+    }
 }

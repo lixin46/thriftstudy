@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userService" class="com.meituan.service.mobile.mtthrift.proxy.ThriftClientProxy" destroy-method="destroy">
+        <!-- 服务类,编译idl生成 -->
+        <property name="serviceInterface" value="com.lixin.thrift.service.UserService"/>
+        <!-- 本地appkey -->
+        <property name="appKey" value="com.sankuai.inf.mtthrift.testClient"/>
+        <!-- 目标Server Appkey  -->
+        <property name="remoteAppkey" value="com.sankuai.inf.mtthrift.testServer"/>
+        <!-- 远程服务端口 -->
+        <property name="remoteServerPort" value="9001"/>
+    </bean>
+
+</beans>

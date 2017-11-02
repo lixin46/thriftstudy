@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Properties>
+        <Property name="pattern_layout">%d %-5p (%F:%L) - %m%n</Property>
+        <Property name="LOG_HOME">/var/sankuai/logs</Property>
+        <Property name="LOG_APP_KEY">testServer</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${pattern_layout}"/>
+        </Console>
+
+        <Scribe name="errorLog">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Property name="hostname">${LOG_APP_KEY}</Property>
+            <Property name="scribeHost">127.0.0.1</Property>
+            <Property name="scribePort">4252</Property>
+            <Property name="scribeCategory">cos_errorlog</Property>
+            <Property name="printExceptionStack">false</Property>
+            <Property name="addStackTraceToMessage">false</Property>
+            <Property name="timeToWaitBeforeRetry">6000</Property>
+            <Property name="sizeOfInMemoryStoreForward">100</Property>
+            <PatternLayout
+                    pattern="%d %p $${sys:app.host} $${sys:app.ip} errorlog appkey=$${LOG_APP_KEY} location=%F:%L rawlog=%replace{%replace{%m}{=}{:}}{\n|\t}{&lt;br/&gt;} rawexception=%replace{%replace{%ex}{=}{:}}{\n|\t}{&lt;br/&gt;}%n"/>
+        </Scribe>
+
+
+    </Appenders>
+
+    <Loggers>
+        <!-- 美团组件日志 -->
+        <AsyncLogger name="jmonitor" level="INFO" includeLocation="true" additivity="false">
+            <AppenderRef ref="jmonitorappender"/>
+        </AsyncLogger>
+        <AsyncLogger name="jmonitorlogstore" level="INFO" includeLocation="true" additivity="false">
+            <AppenderRef ref="jmonitorlogstoreappender"/>
+        </AsyncLogger>
+
+
+        <!-- Application Loggers -->
+        <Logger name="com.lixin" level="INFO" includeLocation="true" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="errorLog"/>
+        </Logger>
+
+
+        <!-- Root Logger -->
+        <Root level="INFO" includeLocation="true">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="errorLog"/>
+        </Root>
+    </Loggers>
+</Configuration>

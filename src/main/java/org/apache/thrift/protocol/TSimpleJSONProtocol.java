@@ -351,7 +351,7 @@ public class TSimpleJSONProtocol extends TProtocol {
                     if (c < ' ') {
                         // 转16进制
                         String hex = Integer.toHexString(c);
-                        // 追加\u
+                        // 追加
                         escape.append('\\');
                         escape.append('u');
                         // 16进制数,前置补0

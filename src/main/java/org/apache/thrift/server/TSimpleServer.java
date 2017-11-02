@@ -78,10 +78,13 @@ public class TSimpleServer extends TServer {
                     // 根据Transport获取Processor对象,也就是具体的服务实现
                     processor = processorFactory_.getProcessor(client);
                     // 调用工厂产生输入传输对象
+                    // 原样返回
                     inputTransport = inputTransportFactory_.getTransport(client);
                     // 调用工厂产生输出传输对象
+                    // 原样返回
                     outputTransport = outputTransportFactory_.getTransport(client);
                     // 根据输入Transport,调用工厂产生输入协议对象
+                    // TProtocol对象内部持有TTransport
                     inputProtocol = inputProtocolFactory_.getProtocol(inputTransport);
                     // 根据输出Transport,调用工厂产生输出协议对象
                     outputProtocol = outputProtocolFactory_.getProtocol(outputTransport);

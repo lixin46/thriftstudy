@@ -20,10 +20,30 @@ package org.apache.thrift.scheme;
 
 import org.apache.thrift.TBase;
 
+/**
+ * 方案定义.
+ * 主要定义了对结构数据的读写,由子类实现具体的读写方式,子类代码全部根据idl文件自动生成.
+ *
+ * thrift把方法的参数列表和返回值,都当做一种struct结构.
+ * struct是field的集合.无论是形参,返回值还是声明的异常,都是field的一种.
+ * @param <T>
+ */
 public interface IScheme<T extends TBase> {
 
+    /**
+     * 从TProtocol中读取结构数据
+     * @param iproto
+     * @param struct
+     * @throws org.apache.thrift.TException
+     */
     void read(org.apache.thrift.protocol.TProtocol iproto, T struct) throws org.apache.thrift.TException;
 
+    /**
+     * 向TProtocol中写入结构数据
+     * @param oproto
+     * @param struct
+     * @throws org.apache.thrift.TException
+     */
     void write(org.apache.thrift.protocol.TProtocol oproto, T struct) throws org.apache.thrift.TException;
 
 }

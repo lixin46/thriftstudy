@@ -1,0 +1,15 @@
+{
+  // message
+  "name": "findByUser",
+  "type": "CALL",
+  "seqid": "xxx",
+  "struct": {
+    // struct
+    "field": {
+      // field
+      "name": "",
+      "type": "",
+      "id": ""
+    }
+  }
+}

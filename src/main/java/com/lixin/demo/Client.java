@@ -1,12 +1,10 @@
 package com.lixin.demo;
 
 import com.lixin.thrift.exception.UserNotFountException;
-import com.lixin.thrift.service.UserService;
 import com.lixin.thrift.vo.UserVo;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
-import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;

@@ -1,7 +1,6 @@
 package com.lixin.thrift.service.impl;
 
 import com.lixin.thrift.exception.UserNotFountException;
-import com.lixin.thrift.service.UserService;
 import com.lixin.thrift.vo.UserVo;
 import org.apache.thrift.TException;
 
