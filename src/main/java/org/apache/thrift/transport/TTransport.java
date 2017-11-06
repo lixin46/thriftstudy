@@ -25,6 +25,10 @@ import java.io.Closeable;
  * Generic class that encapsulates the I/O layer. This is basically a thin
  * wrapper around the combined functionality of Java input/output streams.
  */
+
+/**
+ * IO层的通用封装.
+ */
 public abstract class TTransport implements Closeable {
 
     /**

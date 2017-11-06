@@ -23,7 +23,6 @@ import com.meituan.service.mobile.mtthrift.util.JdkUtil;
 import com.sankuai.sgagent.thrift.model.ConfigStatus;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang.StringUtils;
 import org.apache.thrift.TApplicationException;
 import org.apache.thrift.TBase;
 import org.apache.thrift.TException;
@@ -268,7 +267,9 @@ public class ThriftServerPublisher implements ApplicationContextAware, Initializ
             }
             // jdk6,或不存在@ThriftService注解
             else {
-                //
+                /**
+                 * 从服务类中查找名称为Processor的内部类,反射获取其构造方法创建对象
+                 */
                 TProcessor processor = new MtTProcessor(getProcessorConstructorIface(serviceInterface).
                         newInstance(DynamicProxyUtil.createJdkDynamicProxy(getSynIfaceInterface(serviceInterface), serviceImpl, serverMonitor, this)));
                 //

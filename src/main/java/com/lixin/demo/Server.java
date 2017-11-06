@@ -1,5 +1,6 @@
 package com.lixin.demo;
 
+import com.lixin.thrift.service.UserService;
 import com.lixin.thrift.service.impl.UserServiceImpl;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TSimpleServer;

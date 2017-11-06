@@ -49,17 +49,11 @@
             <artifactId>spring-context</artifactId>
             <version>4.3.8.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>com.meituan.service.mobile</groupId>
-            <artifactId>mtthrift</artifactId>
-            <version>1.8.2</version>
-            <exclusions>
-                <!--<exclusion>-->
-                    <!--<groupId>org.apache.thrift</groupId>-->
-                    <!--<artifactId>libthrift</artifactId>-->
-                <!--</exclusion>-->
-            </exclusions>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.meituan.service.mobile</groupId>-->
+            <!--<artifactId>mtthrift</artifactId>-->
+            <!--<version>1.8.2</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

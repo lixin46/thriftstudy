@@ -13,6 +13,7 @@
         <property name="remoteAppkey" value="com.sankuai.inf.mtthrift.testServer"/>
         <!-- 远程服务端口 -->
         <property name="remoteServerPort" value="9001"/>
+        <property name="localServerPort" value="9001"/>
     </bean>
 
 </beans>

@@ -1,5 +1,6 @@
 package com.lixin.mtdemo;
 
+import com.lixin.thrift.service.UserService;
 import com.lixin.thrift.vo.UserVo;
 import org.apache.thrift.TException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
